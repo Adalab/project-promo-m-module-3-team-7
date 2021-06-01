@@ -74,7 +74,7 @@ function sendFetch(data) {
       console.log(data);
     })
     .catch(() => {
-      responseElement.innerHTML = `<p class="error">El servidor parece estar fuera de servicio. Paciencia. Inténtalo más tarde.</p>`;
+      responseElement.innerHTML = `<p className="error">El servidor parece estar fuera de servicio. Paciencia. Inténtalo más tarde.</p>`;
       responseElement.classList.remove("hiddenIt");
     });
 }

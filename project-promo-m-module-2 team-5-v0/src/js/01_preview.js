@@ -56,7 +56,7 @@ function resetData() {
 
   resetPreview();
   //for (let i= 0; i < colorOptions.length; i++) {
-  //colorOptions[1][].innerHTML = `<input class="coloroption" type="radio" name="coloroption" id="pallete" value="1" />`;
+  //colorOptions[1][].innerHTML = `<input className="coloroption" type="radio" name="coloroption" id="pallete" value="1" />`;
 }
 
 /*//cambiar color título
