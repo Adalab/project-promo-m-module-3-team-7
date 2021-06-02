@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-"use strict";
+'use strict';
 
 function refreshData(ev) {
   const inputNameChanged = ev.target.name;
@@ -7,22 +7,22 @@ function refreshData(ev) {
 
   data[inputNameChanged] = inputValueChanged;
 }
-console.log(data);
+console.log(inputNameChanged);
 
 function renderPreview(data) {
   previewNameElement.innerHTML =
-    data.name === "" ? "Nombre Apellido" : data.name;
+    data.name === '' ? 'Nombre Apellido' : data.name;
   previewJobElement.innerHTML =
-    data.job === "" ? "Front-end developer" : data.job;
-  previewEmailElement.href = data.email === "" ? "" : data.email;
-  previewPhoneElement.href = data.phone === "" ? "" : data.phone;
+    data.job === '' ? 'Front-end developer' : data.job;
+  previewEmailElement.href = data.email === '' ? '' : data.email;
+  previewPhoneElement.href = data.phone === '' ? '' : data.phone;
   previewLinkedinElement.href =
-    data.linkedin === ""
-      ? "https://linkedin.com"
+    data.linkedin === ''
+      ? 'https://linkedin.com'
       : `https://www.linkedin.com/in/${data.linkedin}`;
   previewGithubElement.href =
-    data.github === ""
-      ? "https://github.com"
+    data.github === ''
+      ? 'https://github.com'
       : `https://github.com/${data.github}`;
 }
 
@@ -37,4 +37,4 @@ function handleChangeForm(ev) {
   saveInLocalStorage();
 }
 
-form.addEventListener("change", handleChangeForm);
+form.addEventListener('change', handleChangeForm);
