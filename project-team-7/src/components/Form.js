@@ -1,10 +1,10 @@
-import Collapsable from "./Collapsable";
+import CollapsableHeader from "./CollapsableHeader";
 
 function Form() {
   return (
     <form className="content__form js-form" action="">
       <section className="js-collapsable-container">
-        <Collapsable />
+        <CollapsableHeader />
 
         <div className="colorselection hidden__container">
           <legend className="radioTitle">Colores</legend>
@@ -78,7 +78,7 @@ function Form() {
       </section>
 
       <section className="fill js-collapsable-container collapsable--close">
-        <Collapsable />
+        <CollapsableHeader />
 
         <div className="form__fill__content hidden__container">
           <label htmlFor="fullname" className="form__fill__label">
@@ -166,7 +166,7 @@ function Form() {
       <div className="form__border"></div>
 
       <section className="sharecards js-collapsable-container collapsable--close">
-        <Collapsable />
+        <CollapsableHeader />
 
         <div className="share__content hidden__container">
           <div className="js-response message hidden"></div>

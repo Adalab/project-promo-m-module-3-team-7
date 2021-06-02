@@ -1,4 +1,4 @@
-function Collapsable() {
+function CollapsableHeader() {
   return (
     <div className="form__title js-collapsable-header collapsable--close">
       <h2 className="form__text js-collapsable-header">
@@ -8,4 +8,4 @@ function Collapsable() {
     </div>
   );
 }
-export default Collapsable;
+export default CollapsableHeader;
