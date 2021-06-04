@@ -1,84 +1,15 @@
 import CollapsableHeader from "./CollapsableHeader";
-
+import Design from "./Design";
 function Form() {
   return (
     <form className="content__form js-form" action="">
       <section className="js-collapsable-container">
-        <CollapsableHeader />
-
-        <div className="colorselection hidden__container">
-          <legend className="radioTitle">Colores</legend>
-          <div className="design__content">
-            <input
-              className="coloroption js-palette"
-              type="radio"
-              name="coloroption"
-              id="pallete"
-              value="1"
-            />
-            <div className="pallete1 a"></div>
-            <div className="pallete1 b"></div>
-            <div className="pallete1 c"></div>
-          </div>
-
-          <div className="design__content">
-            <input
-              className="coloroption js-palette"
-              type="radio"
-              name="coloroption"
-              id="pallete"
-              value="2"
-            />
-            <div className="pallete2 a"></div>
-            <div className="pallete2 b"></div>
-            <div className="pallete2 c"></div>
-          </div>
-
-          <div className="design__content">
-            <input
-              className="coloroption js-palette"
-              type="radio"
-              name="coloroption"
-              id="pallete"
-              value="3"
-            />
-            <div className="pallete3 a"></div>
-            <div className="pallete3 b"></div>
-            <div className="pallete3 c"></div>
-          </div>
-
-          <div className="design__content">
-            <input
-              className="coloroption js-palette"
-              type="radio"
-              name="coloroption"
-              id="pallete"
-              value="4"
-            />
-            <div className="pallete4 a"></div>
-            <div className="pallete4 b"></div>
-            <div className="pallete4 c"></div>
-          </div>
-
-          <div className="design__content">
-            <input
-              className="coloroption js-palette"
-              type="radio"
-              name="coloroption"
-              id="pallete"
-              value="5"
-            />
-            <div className="pallete5 a"></div>
-            <div className="pallete5 b"></div>
-            <div className="pallete5 c"></div>
-          </div>
-        </div>
-
-        <div className="form__border"></div>
+        <CollapsableHeader title="Diseña" />
+        <Design />
       </section>
 
       <section className="fill js-collapsable-container collapsable--close">
-        <CollapsableHeader />
+        <CollapsableHeader title="Rellena" />
 
         <div className="form__fill__content hidden__container">
           <label htmlFor="fullname" className="form__fill__label">
@@ -166,7 +97,7 @@ function Form() {
       <div className="form__border"></div>
 
       <section className="sharecards js-collapsable-container collapsable--close">
-        <CollapsableHeader />
+        <CollapsableHeader title="Comparte" />
 
         <div className="share__content hidden__container">
           <div className="js-response message hidden"></div>
