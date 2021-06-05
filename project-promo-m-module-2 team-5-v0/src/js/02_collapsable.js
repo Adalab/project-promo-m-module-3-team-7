@@ -1,7 +1,6 @@
 "use strict";
 
-//Traer el elemento del html//
-
+//Traer el elemento del html
 const collapsableHeaders = document.querySelectorAll(".js-collapsable-header");
 for (const collapsableHeader of collapsableHeaders) {
   collapsableHeader.addEventListener("click", handlerCollapsable);

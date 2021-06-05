@@ -4,7 +4,6 @@
 
 //Inputs radio opciones de colores
 const colorOptions = document.querySelectorAll(".coloroption");
-console.log(colorOptions);
 
 //Elementos que cambiarán en la preview (nombre,línea, icono)
 const colorNameEl = document.querySelector(".card__name");
@@ -12,14 +11,21 @@ const colorLineEl = document.querySelector(".card__line");
 const colorIconBorderEl = document.querySelectorAll(".contact__icon");
 const colorIconEl = document.querySelectorAll(".icon");
 
+// Primera opción seleccionada
+for (const radio of colorOptions) {
+  radio.checked = false;
+}
+colorOptions[0].checked = true;
+
 //2.Función para cambiar los colores
 function changeColors(event) {
-  const selectedOption = event.currentTarget.value;
+  const selectedOption = parseInt(event.currentTarget.value);
   colorOrigin(selectedOption);
 }
 
 function colorOrigin(selectedOption) {
-  if (selectedOption === "1") {
+  data.palette = parseInt(selectedOption);
+  if (selectedOption === 1) {
     //cambiar color título
     colorNameEl.classList.add("card__name--color");
     colorNameEl.classList.remove(
@@ -55,7 +61,7 @@ function colorOrigin(selectedOption) {
         "color-5a"
       );
     }
-  } else if (selectedOption === "2") {
+  } else if (selectedOption === 2) {
     //cambiar color título
     colorNameEl.classList.add("color-2a");
     colorNameEl.classList.remove(
@@ -92,7 +98,7 @@ function colorOrigin(selectedOption) {
         "color-5a"
       );
     }
-  } else if (selectedOption === "3") {
+  } else if (selectedOption === 3) {
     //cambiar color título
     colorNameEl.classList.add("color-3a");
     colorNameEl.classList.remove(
@@ -128,7 +134,7 @@ function colorOrigin(selectedOption) {
         "color-5a"
       );
     }
-  } else if (selectedOption === "4") {
+  } else if (selectedOption === 4) {
     //cambiar color título
     colorNameEl.classList.add("color-4a");
     colorNameEl.classList.remove(
@@ -164,7 +170,7 @@ function colorOrigin(selectedOption) {
         "color-5a"
       );
     }
-  } else if (selectedOption === "5") {
+  } else if (selectedOption === 5) {
     //cambiar color título
     colorNameEl.classList.add("color-5a");
     colorNameEl.classList.remove(
@@ -201,6 +207,7 @@ function colorOrigin(selectedOption) {
       );
     }
   }
+  saveInLocalStorage();
 }
 
 //3.evento

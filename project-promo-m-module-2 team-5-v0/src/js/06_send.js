@@ -3,8 +3,11 @@ const responseElement = document.querySelector(".js-response");
 const twitterContainer = document.querySelector(".js-hiddentw");
 const urlElement = document.querySelector(".js-url");
 const twbtnElement = document.querySelector(".js-buttontwiter");
+let shareLink = "";
+
 function handleClickCreate(event) {
   event.preventDefault();
+
   if (data.name === "") {
     responseElement.innerHTML = "Recuerda completar el campo 'Nombre'.";
     responseElement.classList.remove("hidden");
@@ -29,16 +32,32 @@ function handleClickCreate(event) {
     responseElement.innerHTML = "<p>Recuerda completar el campo 'Github'.</p>";
     responseElement.classList.remove("hidden");
   } else {
-    console.log(data);
-    console.log(data.coloroption);
-    data.palette = data.coloroption;
-    delete data.coloroption;
-    console.log(data.coloroption);
-    sendFetch(data);
+    fetch("https://awesome-profile-cards.herokuapp.com/card", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success === false) {
+          responseElement.innerHTML = "<p>Revisa los campos sin completar</p>";
+          responseElement.classList.remove("hidden");
+        } else {
+          shareLink = data.cardURL;
+          responseElement.classList.add("hidden");
+          twitterContainer.classList.remove("hidden");
+          urlElement.innerHTML = `<p><a href="${shareLink}" target="_blank">¡Aquí puedes verla!</a></p>`;
+          twbtnElement.href = `https://twitter.com/intent/tweet?url=${shareLink}`;
+        }
+      })
+      .catch(() => {
+        responseElement.innerHTML = `<p class="error">El servidor parece estar fuera de servicio. Paciencia. Inténtalo más tarde.</p>`;
+        responseElement.classList.remove("hiddenIt");
+      });
   }
 }
-console.log(data);
-createButton.addEventListener("click", handleClickCreate);
 
 function pruebaemail(valor) {
   const re = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
@@ -48,37 +67,5 @@ function pruebaemail(valor) {
     return false;
   }
 }
-function sendFetch(data) {
-  fetch("https://awesome-profile-cards.herokuapp.com/card/", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "content-type": "application/json",
-    },
 
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.success === false) {
-        responseElement.innerHTML = "<p>Revisa los campos sin completar</p>";
-        responseElement.classList.remove("hidden");
-        console.log(JSON.stringify(data));
-      } else {
-        let shareLink = data.cardURL;
-        responseElement.classList.add("hidden");
-        twitterContainer.classList.remove("hidden");
-        urlElement.innerHTML = `
-                    <p><a href="${shareLink}">¡Aquí puedes verla!</a></p>`;
-      }
-      console.log(data);
-    })
-    .catch(() => {
-      responseElement.innerHTML = `<p className="error">El servidor parece estar fuera de servicio. Paciencia. Inténtalo más tarde.</p>`;
-      responseElement.classList.remove("hiddenIt");
-    });
-}
-function handleTwitterShare() {
-  twbtnElement.href = `https://twitter.com/?lang=es=${shareLink}`;
-}
-twbtnElement.addEventListener("click", handleTwitterShare);
+createButton.addEventListener("click", handleClickCreate);

@@ -4,12 +4,11 @@
 function refreshData(ev) {
   const inputNameChanged = ev.target.name;
   const inputValueChanged = ev.target.value;
-
   data[inputNameChanged] = inputValueChanged;
+  data.palette = parseInt(data.palette);
 }
-console.log(data);
 
-function renderPreview(data) {
+function renderPreview() {
   previewNameElement.innerHTML =
     data.name === "" ? "Nombre Apellido" : data.name;
   previewJobElement.innerHTML =
@@ -28,12 +27,10 @@ function renderPreview(data) {
 
 function handleChangeForm(ev) {
   // 1. Cojo el nuevo valor y lo guardo en una variable
-
   refreshData(ev);
 
   // 2. Re-pinto la tarjeta de preview
-
-  renderPreview(data);
+  renderPreview();
   saveInLocalStorage();
 }
 
