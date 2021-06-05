@@ -1,4 +1,4 @@
-import Input from './Input';
+import Input from "./Input";
 
 function Fill() {
   return (
@@ -21,19 +21,20 @@ function Fill() {
         placeholder="Ej: Front-end unicorn"
       />
 
-      <label className="form__fill__label">Imagen de perfil </label>
-      <div className="form__fill__photo">
-        <button className="form__fill__photo--bt js__profile-trigger">
+      <label class="form__fill__label">Imagen de perfil </label>
+      <div class="form__fill__photo">
+        <label for="photo" class="form__fill__photo--bt">
           Añadir imagen
-        </button>
+        </label>
         <input
           type="file"
           name="photo"
           id="photo"
-          className="js__profile-upload-btn hidden js-input-text js-photo"
+          value="Añadir imagen"
+          class="js__profile-upload-btn hidden js-input-text js-photo"
+          required
         />
-
-        <div className="form__fill__photo--preview js__profile-image"></div>
+        <div class="form__fill__photo--preview js__profile-image"></div>
       </div>
 
       <Input
