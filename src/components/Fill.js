@@ -30,7 +30,7 @@ function Fill() {
           type="file"
           name="photo"
           id="photo"
-          value="Añadir imagen"
+          value=""
           class="js__profile-upload-btn hidden js-input-text js-photo"
           required
         />
