@@ -29,7 +29,7 @@ src
  |  ├─ logo-adalab.png
  |  ├─ logo-u.png
  |  ├─ preview.png
- |  └─ preview2.js
+ |  └─ preview2.png
  |
  ├─ stylesheets
  |  ├─ core
