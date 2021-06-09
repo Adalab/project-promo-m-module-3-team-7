@@ -4,7 +4,7 @@ import Design from "./Design";
 import Fill from "./Fill";
 import Share from "./Share";
 
-function Form() {
+function Form(props) {
   const [collapsableDesign, setCollapsableDesign] = useState("");
 
   const [collapsableFill, setCollapsableFill] = useState("collapsable--close");
@@ -58,7 +58,7 @@ function Form() {
           icon="far fa-keyboard form__iconL"
           handleCollapsable={handleCollapsable}
         />
-        <Fill />
+        <Fill updateAvatar={props.updateAvatar} image={props.image} />
       </section>
       <div className="form__border"></div>
 

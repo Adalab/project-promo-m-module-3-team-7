@@ -1,6 +1,7 @@
 import Input from "./Input";
+import GetAvatar from "./GetAvatar";
 
-function Fill() {
+function Fill(props) {
   return (
     <div className="form__fill__content hidden__container">
       <Input
@@ -20,22 +21,7 @@ function Fill() {
         className="js-job"
         placeholder="Ej: Front-end unicorn"
       />
-
-      <label class="form__fill__label">Imagen de perfil </label>
-      <div class="form__fill__photo">
-        <label for="photo" class="form__fill__photo--bt">
-          Añadir imagen
-        </label>
-        <input
-          type="file"
-          name="photo"
-          id="photo"
-          value=""
-          class="js__profile-upload-btn hidden js-input-text js-photo"
-          required
-        />
-        <div class="form__fill__photo--preview js__profile-image"></div>
-      </div>
+      <GetAvatar image={props.image} updateAvatar={props.updateAvatar} />
 
       <Input
         label="Email"

@@ -3,10 +3,16 @@ import Preview from "./Preview";
 import Form from "./Form";
 
 function Main() {
+  const [image, setImage] = useState("");
+
+  const updateAvatar = (image) => {
+    setImage(image);
+  };
+
   return (
     <section className="main__content">
-      <Preview />
-      <Form />
+      <Preview image={image} />
+      <Form image={image} updateAvatar={updateAvatar} />
     </section>
   );
 }

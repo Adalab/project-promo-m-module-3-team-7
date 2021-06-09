@@ -1,4 +1,8 @@
-function Preview() {
+import defaultAvatar from "../images/preview2.png";
+
+function Preview(props) {
+  const avatar = props.image === "" ? defaultAvatar : props.image;
+
   return (
     <section className="main__preview">
       <button className="preview__resetbutton js-reset-btn">
@@ -12,7 +16,9 @@ function Preview() {
           <h3 className="card__job js-preview-job">Front-end developer</h3>
         </div>
 
-        <div className="card__pic js__profile-preview pic_background"></div>
+        <div
+          className="card__pic js__profile-preview pic_background"
+          style={{ backgroundImage: `url(${avatar})` }}></div>
 
         <ul className="card__contact">
           <li className="contact__icon contact__icon--color">
