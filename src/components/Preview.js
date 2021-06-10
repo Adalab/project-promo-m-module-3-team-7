@@ -1,7 +1,7 @@
-import defaultAvatar from "../images/preview2.png";
+import defaultAvatar from '../images/preview2.png';
 
 function Preview(props) {
-  const avatar = props.image === "" ? defaultAvatar : props.image;
+  const avatar = props.image === '' ? defaultAvatar : props.image;
 
   return (
     <section className="main__preview">
@@ -11,9 +11,15 @@ function Preview(props) {
       <div className="preview__card">
         <div className="card__line card__line--color">
           <h2 className="card__name card__name--color js-preview-name">
-            nombre apellido
+            {props.dataForm.name === ''
+              ? 'Nombre apellido'
+              : props.dataForm.name}
           </h2>
-          <h3 className="card__job js-preview-job">Front-end developer</h3>
+          <h3 className="card__job js-preview-job">
+            {props.dataForm.job === ''
+              ? 'Front-end developer'
+              : props.dataForm.job}
+          </h3>
         </div>
 
         <div

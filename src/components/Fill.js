@@ -1,5 +1,5 @@
-import Input from "./Input";
-import GetAvatar from "./GetAvatar";
+import Input from './Input';
+import GetAvatar from './GetAvatar';
 
 function Fill(props) {
   return (
@@ -8,9 +8,10 @@ function Fill(props) {
         label="Nombre completo"
         type="text"
         name="name"
-        id="fullname"
+        id="name"
         className="js-name"
         placeholder="Ej: Sally Jill"
+        handleFormLifting={props.handleFormLifting}
       />
 
       <Input
@@ -20,6 +21,7 @@ function Fill(props) {
         id="job"
         className="js-job"
         placeholder="Ej: Front-end unicorn"
+        handleFormLifting={props.handleFormLifting}
       />
       <GetAvatar image={props.image} updateAvatar={props.updateAvatar} />
 
@@ -30,6 +32,7 @@ function Fill(props) {
         id="email"
         className="js-email"
         placeholder="Ej:sally-hill@gmail.com"
+        handleFormLifting={props.handleFormLifting}
       />
 
       <Input
@@ -39,6 +42,7 @@ function Fill(props) {
         id="phone"
         className="js-phone"
         placeholder="Ej:555-55-55"
+        handleFormLifting={props.handleFormLifting}
       />
 
       <Input
@@ -48,6 +52,7 @@ function Fill(props) {
         id="linkedin"
         className="js-linkedin"
         placeholder="Ej: sally-jill"
+        handleFormLifting={props.handleFormLifting}
       />
 
       <Input
@@ -57,6 +62,7 @@ function Fill(props) {
         id="github"
         className="js-github"
         placeholder="Ej: @Sally-Jill"
+        handleFormLifting={props.handleFormLifting}
       />
     </div>
   );

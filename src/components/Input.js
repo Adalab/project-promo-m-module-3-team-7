@@ -1,4 +1,10 @@
 function Input(props) {
+  const handleInput = (ev) => {
+    // console.log(ev.target.value);
+    console.log(props);
+    props.handleFormLifting(ev.target.value, ev.target.id);
+  };
+
   return (
     <>
       <label htmlFor={props.id} className="form__fill__label">
@@ -10,6 +16,7 @@ function Input(props) {
         id={props.id}
         className={'form__fill__input ' + props.className}
         placeholder={props.placeholder}
+        onChange={handleInput}
       />
     </>
   );
