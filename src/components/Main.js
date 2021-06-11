@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
-import Preview from './Preview';
-import Form from './Form';
+import React, { useState, useEffect } from "react";
+import Preview from "./Preview";
+import Form from "./Form";
 
 function Main() {
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState("");
   const [dataForm, setdataForm] = useState({
     palette: 1,
-    name: '',
-    job: '',
-    email: '',
-    phone: '',
-    linkedin: '',
-    github: '',
-    photo: '',
+    name: "",
+    job: "",
+    email: "",
+    phone: "",
+    linkedin: "",
+    github: "",
+    photo: "",
   });
 
   const updateAvatar = (image) => {
     setImage(image);
     setdataForm({ ...dataForm, photo: image });
   };
+
+  const updatePalettes = (radioButton) => {
+    setdataForm({ ...dataForm, palette: radioButton });
+  };
+
+  useEffect(() => {});
 
   const handleFormLifting = (inputValue, inputId) => {
     //1.- accedemos al objeto dataForm con los tres puntos (...) y el nombre del objeto (dataForm)
@@ -32,7 +38,9 @@ function Main() {
       <Preview image={image} dataForm={dataForm} />
       <Form
         image={image}
+        dataForm={dataForm}
         updateAvatar={updateAvatar}
+        updatePalettes={updatePalettes}
         handleFormLifting={handleFormLifting}
       />
     </section>

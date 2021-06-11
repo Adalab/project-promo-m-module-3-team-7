@@ -1,7 +1,10 @@
-import defaultAvatar from '../images/preview2.png';
+import defaultAvatar from "../images/preview2.png";
 
 function Preview(props) {
-  const avatar = props.image === '' ? defaultAvatar : props.image;
+  const avatar = props.image === "" ? defaultAvatar : props.image;
+
+  if (props.dataForm.palette === 1) {
+  }
 
   return (
     <section className="main__preview">
@@ -11,13 +14,13 @@ function Preview(props) {
       <div className="preview__card">
         <div className="card__line card__line--color">
           <h2 className="card__name card__name--color js-preview-name">
-            {props.dataForm.name === ''
-              ? 'Nombre apellido'
+            {props.dataForm.name === ""
+              ? "Nombre apellido"
               : props.dataForm.name}
           </h2>
           <h3 className="card__job js-preview-job">
-            {props.dataForm.job === ''
-              ? 'Front-end developer'
+            {props.dataForm.job === ""
+              ? "Front-end developer"
               : props.dataForm.job}
           </h3>
         </div>
@@ -30,7 +33,7 @@ function Preview(props) {
           <li className="contact__icon contact__icon--color">
             <a
               className="icon icon--color js-preview-phone"
-              href="phone"
+              href={`tel:${props.dataForm.phone}`}
               target="_blank"
               rel="noreferrer">
               <i className="contact__icon__pic fas fa-mobile-alt"></i>
@@ -39,7 +42,7 @@ function Preview(props) {
           <li className="contact__icon contact__icon--color">
             <a
               className="icon icon--color js-preview-mail"
-              href="mailto:"
+              href={`mailto:${props.dataForm.email}`}
               target="_blank"
               rel="noreferrer">
               <i className="contact__icon__pic far fa-envelope"></i>
@@ -48,7 +51,7 @@ function Preview(props) {
           <li className="contact__icon contact__icon--color">
             <a
               className="icon icon--color js-preview-linkedin"
-              href="https://linkedin.com"
+              href={`https://linkedin.com/${props.dataForm.linkedin}`}
               title="Linkedin contact"
               target="_blank"
               rel="noreferrer">
@@ -58,7 +61,7 @@ function Preview(props) {
           <li className="contact__icon contact__icon--color">
             <a
               className="icon icon--color js-preview-github"
-              href=""
+              href={`https://github.com/${props.dataForm.github}`}
               target="_blank"
               rel="noreferrer">
               <i className="contact__icon__pic fab fa-github-alt"></i>

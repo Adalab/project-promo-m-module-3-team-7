@@ -1,41 +1,41 @@
-import React, { useState } from 'react';
-import CollapsableHeader from './CollapsableHeader';
-import Design from './Design';
-import Fill from './Fill';
-import Share from './Share';
+import React, { useState } from "react";
+import CollapsableHeader from "./CollapsableHeader";
+import Design from "./Design";
+import Fill from "./Fill";
+import Share from "./Share";
 
 function Form(props) {
-  const [collapsableDesign, setCollapsableDesign] = useState('');
+  const [collapsableDesign, setCollapsableDesign] = useState("");
 
-  const [collapsableFill, setCollapsableFill] = useState('collapsable--close');
+  const [collapsableFill, setCollapsableFill] = useState("collapsable--close");
 
   const [collapsableShare, setCollapsableShare] =
-    useState('collapsable--close');
+    useState("collapsable--close");
 
   const handleCollapsable = (title) => {
-    if (title === 'Diseña') {
-      if (collapsableDesign === '') {
+    if (title === "Diseña") {
+      if (collapsableDesign === "") {
         // Se esta mostrando el colapsable
-        setCollapsableDesign('collapsable--close');
+        setCollapsableDesign("collapsable--close");
       } else {
-        setCollapsableDesign('');
+        setCollapsableDesign("");
       }
     }
-    if (title === 'Rellena') {
-      if (collapsableFill === '') {
+    if (title === "Rellena") {
+      if (collapsableFill === "") {
         // Se esta mostrando el colapsable
-        setCollapsableFill('collapsable--close');
+        setCollapsableFill("collapsable--close");
       } else {
-        setCollapsableFill('');
+        setCollapsableFill("");
       }
     }
 
-    if (title === 'Comparte') {
-      if (collapsableShare === '') {
+    if (title === "Comparte") {
+      if (collapsableShare === "") {
         // Se esta mostrando el colapsable
-        setCollapsableShare('collapsable--close');
+        setCollapsableShare("collapsable--close");
       } else {
-        setCollapsableShare('');
+        setCollapsableShare("");
       }
     }
     console.log(title);
@@ -49,7 +49,10 @@ function Form(props) {
           icon="far fa-object-ungroup form__iconL"
           handleCollapsable={handleCollapsable}
         />
-        <Design />
+        <Design
+          updatePalettes={props.updatePalettes}
+          dataForm={props.dataForm}
+        />
       </section>
 
       <section className={`fill js-collapsable-container ${collapsableFill}`}>
