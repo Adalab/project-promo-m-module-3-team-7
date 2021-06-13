@@ -1,7 +1,5 @@
 function Input(props) {
   const handleInput = (ev) => {
-    // console.log(ev.target.value);
-    console.log(props);
     props.handleFormLifting(ev.target.value, ev.target.id);
   };
 

@@ -15,11 +15,13 @@ function Main() {
     photo: "",
   });
 
+  // Photo
   const updateAvatar = (image) => {
     setImage(image);
     setdataForm({ ...dataForm, photo: image });
   };
 
+  // Palettes
   const [ColorPreview, setColorPreview] = useState("palette-preview1");
   const updatePalettes = (radioButton) => {
     setdataForm({ ...dataForm, palette: radioButton });
@@ -31,6 +33,16 @@ function Main() {
       setColorPreview("palette-preview3");
     }
   };
+
+  // Inputs
+  const handleFormLifting = (inputValue, inputId) => {
+    //1.- accedemos al objeto dataForm con los tres puntos (...) y el nombre del objeto (dataForm)
+    //2.- con los corchetes de inputId accedemos a la propiedad del objeto que coincide con el Id del input sobre el que estamos trabajando
+    //3.- con inputvalue agregamos el valor que el usuario introduce en el input del formulario
+    setdataForm({ ...dataForm, [inputId]: inputValue });
+  };
+
+  // Reset
 
   const handleReset = () => {
     setdataForm({
@@ -45,15 +57,6 @@ function Main() {
     });
     setImage("");
     /*Despintar value en inputs del form*/
-  };
-
-  /*useEffect(() => {});*/
-
-  const handleFormLifting = (inputValue, inputId) => {
-    //1.- accedemos al objeto dataForm con los tres puntos (...) y el nombre del objeto (dataForm)
-    //2.- con los corchetes de inputId accedemos a la propiedad del objeto que coincide con el Id del input sobre el que estamos trabajando
-    //3.- con inputvalue agregamos el valor que el usuario introduce en el input del formulario
-    setdataForm({ ...dataForm, [inputId]: inputValue });
   };
 
   return (

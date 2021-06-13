@@ -23,6 +23,7 @@ function Fill(props) {
         placeholder="Ej: Front-end unicorn"
         handleFormLifting={props.handleFormLifting}
       />
+
       <GetAvatar image={props.image} updateAvatar={props.updateAvatar} />
 
       <Input
