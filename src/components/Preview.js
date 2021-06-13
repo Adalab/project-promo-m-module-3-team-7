@@ -3,22 +3,19 @@ import defaultAvatar from "../images/preview2.png";
 function Preview(props) {
   const avatar = props.image === "" ? defaultAvatar : props.image;
 
-  if (props.dataForm.palette === 1) {
-  }
-
   return (
     <section className="main__preview">
-      <button className="preview__resetbutton js-reset-btn">
+      <button className="preview__resetbutton" onClick={props.reset}>
         <i className="far fa-trash-alt"></i> reset
       </button>
-      <div className="preview__card">
+      <div className={`preview__card ${props.ColorPreview}`}>
         <div className="card__line card__line--color">
-          <h2 className="card__name card__name--color js-preview-name">
+          <h2 className="card__name card__name--color">
             {props.dataForm.name === ""
               ? "Nombre apellido"
               : props.dataForm.name}
           </h2>
-          <h3 className="card__job js-preview-job">
+          <h3 className="card__job">
             {props.dataForm.job === ""
               ? "Front-end developer"
               : props.dataForm.job}
@@ -26,45 +23,41 @@ function Preview(props) {
         </div>
 
         <div
-          className="card__pic js__profile-preview pic_background"
+          className="card__pic pic_background"
           style={{ backgroundImage: `url(${avatar})` }}></div>
 
         <ul className="card__contact">
-          <li className="contact__icon contact__icon--color">
+          <li className="contact__icon">
             <a
-              className="icon icon--color js-preview-phone"
               href={`tel:${props.dataForm.phone}`}
               target="_blank"
               rel="noreferrer">
-              <i className="contact__icon__pic fas fa-mobile-alt"></i>
+              <i className="icon icon--color fas fa-mobile-alt"></i>
             </a>
           </li>
-          <li className="contact__icon contact__icon--color">
+          <li className="contact__icon">
             <a
-              className="icon icon--color js-preview-mail"
               href={`mailto:${props.dataForm.email}`}
               target="_blank"
               rel="noreferrer">
-              <i className="contact__icon__pic far fa-envelope"></i>
+              <i className="icon icon--color far fa-envelope"></i>
             </a>
           </li>
-          <li className="contact__icon contact__icon--color">
+          <li className="contact__icon">
             <a
-              className="icon icon--color js-preview-linkedin"
               href={`https://linkedin.com/${props.dataForm.linkedin}`}
               title="Linkedin contact"
               target="_blank"
               rel="noreferrer">
-              <i className="contact__icon__pic fab fa-linkedin-in"></i>
+              <i className="icon icon--color fab fa-linkedin-in"></i>
             </a>
           </li>
-          <li className="contact__icon contact__icon--color">
+          <li className="contact__icon">
             <a
-              className="icon icon--color js-preview-github"
               href={`https://github.com/${props.dataForm.github}`}
               target="_blank"
               rel="noreferrer">
-              <i className="contact__icon__pic fab fa-github-alt"></i>
+              <i className="icon icon--color fab fa-github-alt"></i>
             </a>
           </li>
         </ul>

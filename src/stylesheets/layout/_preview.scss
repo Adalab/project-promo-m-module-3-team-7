@@ -50,9 +50,6 @@
   flex-direction: column;
   justify-content: center;
 }
-.card__line--color {
-  border-left: solid 5px $color-1b;
-}
 
 .card__name {
   height: 20px;
@@ -66,9 +63,6 @@
   white-space: nowrap;
 }
 
-.card__name--color {
-  color: $color-1a;
-}
 .card__job {
   height: 20px;
   color: $color-grey;
@@ -100,7 +94,8 @@
   justify-content: space-between;
   align-items: center;
 }
-.contact__icon {
+
+.icon {
   width: 32px;
   height: 32px;
   font-size: 18px;
@@ -113,60 +108,44 @@
     font-size: 24px;
     cursor: pointer;
   }
-}
-.contact__icon__pic {
   align-content: center;
 }
-.icon--color {
-  color: $color-1a;
+
+.palette-preview1 {
+  .card__name--color {
+    color: $color-1a;
+  }
+  .card__line--color {
+    border-left: solid 5px $color-1b;
+  }
+  .icon--color {
+    color: $color-1a;
+    border: solid 2px $color-1c;
+  }
 }
 
-.contact__icon--color {
-  border: solid 2px $color-1c;
+.palette-preview2 {
+  .card__name--color {
+    color: $color-2a;
+  }
+  .card__line--color {
+    border-left: solid 5px $color-2b;
+  }
+  .icon--color {
+    color: $color-2a;
+    border: solid 2px $color-2c;
+  }
 }
 
-.color-2a {
-  color: $color-2a;
-}
-
-.color-2b {
-  border-left: solid 5px $color-2b;
-}
-
-.color-2c {
-  border: solid 2px $color-2c;
-}
-
-.color-3a {
-  color: $color-3a;
-}
-
-.color-3b {
-  border-left: solid 5px $color-3b;
-}
-
-.color-3c {
-  border: solid 2px $color-3c;
-}
-.color-4a {
-  color: $color-4a;
-}
-
-.color-4b {
-  border-left: solid 5px $color-4b;
-}
-
-.color-4c {
-  border: solid 2px $color-4c;
-}
-.color-5a {
-  color: $color-5a;
-}
-
-.color-5b {
-  border-left: solid 5px $color-5b;
-}
-
-.color-5c {
-  border: solid 2px $color-5c;
+.palette-preview3 {
+  .card__name--color {
+    color: $color-3a;
+  }
+  .card__line--color {
+    border-left: solid 5px $color-3b;
+  }
+  .icon--color {
+    color: $color-3a;
+    border: solid 2px $color-3c;
+  }
 }

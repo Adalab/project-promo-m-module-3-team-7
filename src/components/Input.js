@@ -14,7 +14,7 @@ function Input(props) {
         type={props.type}
         name={props.name}
         id={props.id}
-        className={'form__fill__input ' + props.className}
+        className={"form__fill__input " + props.className}
         placeholder={props.placeholder}
         onChange={handleInput}
       />

@@ -1,5 +1,5 @@
-import Input from './Input';
-import GetAvatar from './GetAvatar';
+import Input from "./Input";
+import GetAvatar from "./GetAvatar";
 
 function Fill(props) {
   return (

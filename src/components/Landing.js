@@ -1,11 +1,14 @@
-import Footer from './Footer';
+import Footer from "./Footer";
+import "../stylesheets/App.scss";
+import logoHeader from "../images/logo-u.png";
+import { Link } from "react-router-dom";
 
 function Landing() {
   return (
     <>
       <header className="header">
         <img
-          src="./assets/images/logo-u.png"
+          src={logoHeader}
           className="header__img"
           title="Awesome Profile Cards"
           alt="Awesome Profile
@@ -33,9 +36,9 @@ function Landing() {
           </li>
         </ul>
         <nav className="main-index__nav">
-          <a className="nav__startlink" href="./design-card.html" title="">
+          <Link className="nav__startlink" to="/card" title="Crea tu tarjeta">
             Comenzar
-          </a>
+          </Link>
         </nav>
       </main>
       <Footer />

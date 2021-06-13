@@ -7,7 +7,7 @@ function Palettes(props) {
   return (
     <div className="design__content">
       <input
-        className="coloroption js-palette"
+        className="coloroption"
         type="radio"
         name="coloroption"
         id="pallete"

@@ -20,11 +20,34 @@ function Main() {
     setdataForm({ ...dataForm, photo: image });
   };
 
+  const [ColorPreview, setColorPreview] = useState("palette-preview1");
   const updatePalettes = (radioButton) => {
     setdataForm({ ...dataForm, palette: radioButton });
+    if (radioButton === 1) {
+      setColorPreview("palette-preview1");
+    } else if (radioButton === 2) {
+      setColorPreview("palette-preview2");
+    } else if (radioButton === 3) {
+      setColorPreview("palette-preview3");
+    }
   };
 
-  useEffect(() => {});
+  const handleReset = () => {
+    setdataForm({
+      palette: 1,
+      name: "",
+      job: "",
+      email: "",
+      phone: "",
+      linkedin: "",
+      github: "",
+      photo: "",
+    });
+    setImage("");
+    /*Despintar value en inputs del form*/
+  };
+
+  /*useEffect(() => {});*/
 
   const handleFormLifting = (inputValue, inputId) => {
     //1.- accedemos al objeto dataForm con los tres puntos (...) y el nombre del objeto (dataForm)
@@ -35,7 +58,12 @@ function Main() {
 
   return (
     <section className="main__content">
-      <Preview image={image} dataForm={dataForm} />
+      <Preview
+        image={image}
+        dataForm={dataForm}
+        reset={handleReset}
+        ColorPreview={ColorPreview}
+      />
       <Form
         image={image}
         dataForm={dataForm}
