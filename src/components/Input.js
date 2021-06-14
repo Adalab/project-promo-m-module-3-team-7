@@ -13,7 +13,7 @@ function Input(props) {
         value={props.value}
         name={props.name}
         id={props.id}
-        className={'form__fill__input ' + props.className}
+        className={"form__fill__input " + props.className}
         placeholder={props.placeholder}
         onChange={handleInput}
       />

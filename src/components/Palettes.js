@@ -12,12 +12,12 @@ function Palettes(props) {
         name="coloroption"
         id="pallete"
         value={props.value}
-        onClick={handlePalette}
+        onChange={handlePalette}
         checked={props.dataForm.palette === parseInt(props.value)}
       />
-      <div className={'pallete' + props.value + ' a'}></div>
-      <div className={'pallete' + props.value + ' b'}></div>
-      <div className={'pallete' + props.value + ' c'}></div>
+      <div className={"pallete" + props.value + " a"}></div>
+      <div className={"pallete" + props.value + " b"}></div>
+      <div className={"pallete" + props.value + " c"}></div>
     </div>
   );
 }

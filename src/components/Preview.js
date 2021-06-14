@@ -1,7 +1,8 @@
 import defaultAvatar from "../images/preview2.png";
 
 function Preview(props) {
-  const avatar = props.image === "" ? defaultAvatar : props.image;
+  const avatar =
+    props.dataForm.photo === "" ? defaultAvatar : props.dataForm.photo;
 
   return (
     <section className="main__preview">
@@ -63,8 +64,8 @@ function Preview(props) {
         </ul>
       </div>
       <div className="box-tooltip phone">
-        <span className="tooltip phone js-tooltip">
-          <a className="contact__icon__pic fas fa-mobile-alt" href=""></a>
+        <span className="tooltip phone">
+          <div className="contact__icon__pic fas fa-mobile-alt"></div>
           ¿Hablamos?
         </span>
       </div>

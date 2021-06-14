@@ -1,5 +1,5 @@
-import Input from './Input';
-import GetAvatar from './GetAvatar';
+import Input from "./Input";
+import GetAvatar from "./GetAvatar";
 
 function Fill(props) {
   return (
@@ -26,7 +26,11 @@ function Fill(props) {
         value={props.dataForm.job}
       />
 
-      <GetAvatar image={props.image} updateAvatar={props.updateAvatar} />
+      <GetAvatar
+        dataForm={props.dataForm}
+        image={props.dataForm.photo}
+        updateAvatar={props.updateAvatar}
+      />
 
       <Input
         label="Email"

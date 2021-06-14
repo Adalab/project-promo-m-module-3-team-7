@@ -1,4 +1,4 @@
-import Palettes from './Palettes';
+import Palettes from "./Palettes";
 
 function Design(props) {
   return (
@@ -6,17 +6,17 @@ function Design(props) {
       <div className="colorselection hidden__container">
         <legend className="radioTitle">Colores</legend>
         <Palettes
-          value="1"
+          value={1}
           updatePalettes={props.updatePalettes}
           dataForm={props.dataForm}
         />
         <Palettes
-          value="2"
+          value={2}
           updatePalettes={props.updatePalettes}
           dataForm={props.dataForm}
         />
         <Palettes
-          value="3"
+          value={3}
           updatePalettes={props.updatePalettes}
           dataForm={props.dataForm}
         />
