@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Landing() {
   return (
     <>
-      <header className="header">
+      <main className="main-index">
         <img
           src={logoHeader}
           className="header__img"
@@ -14,9 +14,6 @@ function Landing() {
           alt="Awesome Profile
     Cards Logo"
         />
-      </header>
-
-      <main className="main-index">
         <h1 className="main-index__title">Crea tu tarjeta de visita</h1>
         <p className="main-index__subtitle">
           Crea mejores contactos profesionales de forma fácil y cómoda

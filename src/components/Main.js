@@ -70,20 +70,22 @@ function Main() {
   };
 
   return (
-    <section className="main__content">
-      <Preview
-        dataForm={dataForm}
-        reset={handleReset}
-        ColorPreview={ColorPreview}
-      />
-      <Form
-        dataForm={dataForm}
-        ColorPreview={ColorPreview}
-        updateAvatar={updateAvatar}
-        updatePalettes={updatePalettes}
-        handleFormLifting={handleFormLifting}
-      />
-    </section>
+    <div className="wrapper">
+      <section className="main__content">
+        <Preview
+          dataForm={dataForm}
+          reset={handleReset}
+          ColorPreview={ColorPreview}
+        />
+        <Form
+          dataForm={dataForm}
+          ColorPreview={ColorPreview}
+          updateAvatar={updateAvatar}
+          updatePalettes={updatePalettes}
+          handleFormLifting={handleFormLifting}
+        />
+      </section>
+    </div>
   );
 }
 
