@@ -77,7 +77,7 @@ function Form(props) {
           icon="fas fa-share-alt form__iconL"
           handleCollapsable={handleCollapsable}
         />
-        <Share />
+        <Share dataForm={props.dataForm} />
       </section>
       <div className="form__border--share"></div>
     </form>

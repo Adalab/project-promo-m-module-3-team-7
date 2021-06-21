@@ -1,8 +1,29 @@
 import ErrorMessage from "./ErrorMessage";
 import SuccessMessage from "./SuccessMessage";
+import { useState } from "react";
 
-function Share() {
-  const handleCreate = () => {};
+function Share(props) {
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleCreate = () => {
+    fetch("https://awesome-profile-cards.herokuapp.com/card", {
+      method: "POST",
+      body: JSON.stringify(props.dataForm),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success === false) {
+          setError(data.error);
+        } else if (data.success === true) {
+          setSuccess(data.cardURL);
+        }
+      });
+  };
   return (
     <div className="share__content hidden__container">
       <div
@@ -11,8 +32,8 @@ function Share() {
         <i className="far fa-address-card button__icon"></i>
         <div className="button__text">Crear tarjeta</div>
       </div>
-      <ErrorMessage />
-      <SuccessMessage />
+      {error !== "" && <ErrorMessage />}
+      {success !== "" && <SuccessMessage cardURL={success} />}
     </div>
   );
 }
