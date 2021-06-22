@@ -7,7 +7,7 @@ function Share(props) {
   const [success, setSuccess] = useState("");
 
   const handleCreate = () => {
-    fetch("https://awesome-profile-cards.herokuapp.com/card", {
+    fetch("http://localhost:4000/card/", {
       method: "POST",
       body: JSON.stringify(props.dataForm),
       headers: {

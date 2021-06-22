@@ -1,44 +1,28 @@
 {
-  "name": "project-team-7",
-  "homepage": "./",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "node-sass": "^6.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+  "name": "project-promo-m-module-3-team-7",
+  "version": "1.0.0",
+  "description": "En este proyecto vamos a utilizar _React_ para refactorizar una web interactiva hecha con Vanilla JavaScript.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "startnode": "node src/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adalab/project-promo-m-module-3-team-7.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adalab/project-promo-m-module-3-team-7/issues"
+  },
+  "homepage": "https://github.com/Adalab/project-promo-m-module-3-team-7#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
   }
 }
