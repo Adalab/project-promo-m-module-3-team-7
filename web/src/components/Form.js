@@ -17,24 +17,36 @@ function Form(props) {
       if (collapsableDesign === "") {
         // Se esta mostrando el colapsable
         setCollapsableDesign("collapsable--close");
+        setCollapsableFill("collapsable--close");
+        setCollapsableShare("collapsable--close");
       } else {
         setCollapsableDesign("");
+        setCollapsableFill("collapsable--close");
+        setCollapsableShare("collapsable--close");
       }
     }
     if (title === "Rellena") {
       if (collapsableFill === "") {
         // Se esta mostrando el colapsable
+        setCollapsableDesign("collapsable--close");
         setCollapsableFill("collapsable--close");
+        setCollapsableShare("collapsable--close");
       } else {
+        setCollapsableDesign("collapsable--close");
         setCollapsableFill("");
+        setCollapsableShare("collapsable--close");
       }
     }
 
     if (title === "Comparte") {
       if (collapsableShare === "") {
         // Se esta mostrando el colapsable
+        setCollapsableDesign("collapsable--close");
+        setCollapsableFill("collapsable--close");
         setCollapsableShare("collapsable--close");
       } else {
+        setCollapsableDesign("collapsable--close");
+        setCollapsableFill("collapsable--close");
         setCollapsableShare("");
       }
     }
