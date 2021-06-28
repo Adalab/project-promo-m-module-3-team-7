@@ -3,7 +3,7 @@ function SuccessMessage(props) {
     <div className="shared  js-hiddentw">
       <h3 className="shared__text">La tarjeta ha sido creada:</h3>
       <div className="shared__link js-url">
-        <a href={props.cardURL} target="_blank">
+        <a href={props.cardURL} target="_blank" rel="noreferrer">
           {props.cardURL}
         </a>
       </div>

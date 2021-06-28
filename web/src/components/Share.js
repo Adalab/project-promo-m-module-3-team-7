@@ -1,10 +1,9 @@
 import ErrorMessage from "./ErrorMessage";
 import SuccessMessage from "./SuccessMessage";
-import { useState } from "react";
 
 function Share(props) {
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  /*const [error, setError] = useState("");*/
+  /*const [success, setSuccess] = useState("");*/
 
   const handleCreate = () => {
     fetch("/card/", {
@@ -17,11 +16,11 @@ function Share(props) {
       .then((res) => res.json())
       .then((data) => {
         if (data.success === false) {
-          setError(data.error);
-          setSuccess("");
+          props.setError(data.error);
+          props.setSuccess("");
         } else if (data.success === true) {
-          setSuccess(data.cardURL);
-          setError("");
+          props.setSuccess(data.cardURL);
+          props.setError("");
         }
       });
   };
@@ -33,8 +32,8 @@ function Share(props) {
         <i className="far fa-address-card button__icon"></i>
         <div className="button__text">Crear tarjeta</div>
       </div>
-      {error !== "" && <ErrorMessage />}
-      {success !== "" && <SuccessMessage cardURL={success} />}
+      {props.error !== "" && <ErrorMessage />}
+      {props.success !== "" && <SuccessMessage cardURL={props.success} />}
     </div>
   );
 }

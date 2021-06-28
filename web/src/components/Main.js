@@ -40,6 +40,10 @@ function Main() {
       setColorPreview("palette-preview2");
     } else if (radioButton === 3) {
       setColorPreview("palette-preview3");
+    } else if (radioButton === 4) {
+      setColorPreview("palette-preview4");
+    } else if (radioButton === 5) {
+      setColorPreview("palette-preview5");
     }
     ls.set("userData", dataForm);
   };
@@ -52,6 +56,9 @@ function Main() {
     setdataForm({ ...dataForm, [inputId]: inputValue });
     ls.set("userData", dataForm);
   };
+
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   // Reset
   const handleReset = () => {
@@ -67,6 +74,8 @@ function Main() {
     });
     setColorPreview("palette-preview1");
     ls.clear();
+    setError("");
+    setSuccess("");
   };
 
   return (
@@ -83,6 +92,10 @@ function Main() {
           updateAvatar={updateAvatar}
           updatePalettes={updatePalettes}
           handleFormLifting={handleFormLifting}
+          error={error}
+          success={success}
+          setError={setError}
+          setSuccess={setSuccess}
         />
       </section>
     </div>

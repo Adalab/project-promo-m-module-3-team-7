@@ -20,6 +20,16 @@ function Design(props) {
           updatePalettes={props.updatePalettes}
           dataForm={props.dataForm}
         />
+        <Palettes
+          value={4}
+          updatePalettes={props.updatePalettes}
+          dataForm={props.dataForm}
+        />
+        <Palettes
+          value={5}
+          updatePalettes={props.updatePalettes}
+          dataForm={props.dataForm}
+        />
       </div>
       <div className="form__border"></div>
     </>

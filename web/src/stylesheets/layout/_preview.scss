@@ -146,3 +146,29 @@
     border: solid 2px $color-3c;
   }
 }
+
+.palette-preview4 {
+  .card__name--color {
+    color: $color-4a;
+  }
+  .card__line--color {
+    border-left: solid 5px $color-4b;
+  }
+  .icon--color {
+    color: $color-4a;
+    border: solid 2px $color-4c;
+  }
+}
+
+.palette-preview5 {
+  .card__name--color {
+    color: $color-5a;
+  }
+  .card__line--color {
+    border-left: solid 5px $color-5b;
+  }
+  .icon--color {
+    color: $color-5a;
+    border: solid 2px $color-5c;
+  }
+}

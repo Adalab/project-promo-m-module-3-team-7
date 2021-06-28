@@ -76,7 +76,13 @@ function Form(props) {
           icon="fas fa-share-alt form__iconL"
           handleCollapsable={handleCollapsable}
         />
-        <Share dataForm={props.dataForm} />
+        <Share
+          dataForm={props.dataForm}
+          error={props.error}
+          success={props.success}
+          setError={props.setError}
+          setSuccess={props.setSuccess}
+        />
       </section>
       <div className="form__border--share"></div>
     </form>
