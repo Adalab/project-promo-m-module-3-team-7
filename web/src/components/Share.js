@@ -16,11 +16,12 @@ function Share(props) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.success === false) {
           setError(data.error);
+          setSuccess("");
         } else if (data.success === true) {
           setSuccess(data.cardURL);
+          setError("");
         }
       });
   };

@@ -24,9 +24,6 @@
   </head>
   <body>
     <section class="main__preview">
-      <button class="preview__resetbutton js-reset-btn">
-        <i class="far fa-trash-alt"></i> reset
-      </button>
       <div class="preview__card palette-preview<%= palette %>">
         <div class="card__line card__line--color">
           <h2 class="card__name card__name--color js-preview-name">
@@ -44,7 +41,7 @@
           <li class="contact__icon contact__icon--color">
             <a
               class="icon icon--color js-preview-phone"
-              href="<%= phone %>"
+              href="tel:<%= phone %>"
               target="_blank"
             >
               <i class="contact__icon__pic fas fa-mobile-alt"></i
@@ -53,7 +50,7 @@
           <li class="contact__icon contact__icon--color">
             <a
               class="icon icon--color js-preview-mail"
-              href="mailto: <%= email %>"
+              href="mailto:<%= email %>"
               target="_blank"
             >
               <i class="contact__icon__pic far fa-envelope"></i
@@ -62,7 +59,7 @@
           <li class="contact__icon contact__icon--color">
             <a
               class="icon icon--color js-preview-linkedin"
-              href="https://linkedin.com/in/ <%= linkedin %>"
+              href="https://linkedin.com/in/<%= linkedin %>"
               title="Linkedin contact"
               target="_blank"
             >

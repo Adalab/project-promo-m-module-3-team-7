@@ -38,7 +38,6 @@ function Form(props) {
         setCollapsableShare("");
       }
     }
-    console.log(title);
   };
 
   return (

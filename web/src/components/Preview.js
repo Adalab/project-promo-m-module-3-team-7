@@ -46,7 +46,7 @@ function Preview(props) {
           </li>
           <li className="contact__icon">
             <a
-              href={`https://linkedin.com/${props.dataForm.linkedin}`}
+              href={`https://linkedin.com/in/${props.dataForm.linkedin}`}
               title="Linkedin contact"
               target="_blank"
               rel="noreferrer">

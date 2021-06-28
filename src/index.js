@@ -26,29 +26,11 @@ const db = new Database("./src/data/database.db", {
 server.get("/card/:id", (req, res) => {
   const query = db.prepare(`SELECT * FROM users WHERE id= ?`);
   const cardData = query.get(req.params.id);
-  /*console.log(cardData);*/
 
   res.render("card", cardData);
 });
 
 server.post("/card/", (req, res) => {
-  /*
-  const query = db.prepare(
-    `SELECT * FROM users WHERE palette= ? AND name = ? AND job = ? AND email = ? AND phone = ? AND linkedin = ? AND github = ? AND photo = ?`
-  );
-
-  const foundUser = query.get(
-    req.body.name,
-    req.body.palette,
-    req.body.job,
-    req.body.email,
-    req.body.phone,
-    req.body.linkedin,
-    req.body.github,
-    req.body.photo
-  );
-*/
-  /*console.log(req.body);*/
   const response = {};
 
   if (req.body.name === "") {
