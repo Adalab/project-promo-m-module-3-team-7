@@ -63,12 +63,6 @@ function Preview(props) {
           </li>
         </ul>
       </div>
-      <div className="box-tooltip phone">
-        <span className="tooltip phone">
-          <div className="contact__icon__pic fas fa-mobile-alt"></div>
-          ¿Hablamos?
-        </span>
-      </div>
     </section>
   );
 }
