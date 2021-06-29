@@ -2,9 +2,6 @@ import ErrorMessage from "./ErrorMessage";
 import SuccessMessage from "./SuccessMessage";
 
 function Share(props) {
-  /*const [error, setError] = useState("");*/
-  /*const [success, setSuccess] = useState("");*/
-
   const handleCreate = () => {
     fetch("/card/", {
       method: "POST",
@@ -26,13 +23,11 @@ function Share(props) {
   };
   return (
     <div className="share__content hidden__container">
-      <div
-        onClick={handleCreate}
-        className="button js-buttonCreateCard js-collapsable-container js-hidden">
+      <div onClick={handleCreate} className="button">
         <i className="far fa-address-card button__icon"></i>
         <div className="button__text">Crear tarjeta</div>
       </div>
-      {props.error !== "" && <ErrorMessage />}
+      {props.error !== "" && <ErrorMessage dataForm={props.dataForm} />}
       {props.success !== "" && <SuccessMessage cardURL={props.success} />}
     </div>
   );

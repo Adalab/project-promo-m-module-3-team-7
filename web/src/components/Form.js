@@ -6,9 +6,7 @@ import Share from "./Share";
 
 function Form(props) {
   const [collapsableDesign, setCollapsableDesign] = useState("");
-
   const [collapsableFill, setCollapsableFill] = useState("collapsable--close");
-
   const [collapsableShare, setCollapsableShare] =
     useState("collapsable--close");
 
@@ -53,8 +51,8 @@ function Form(props) {
   };
 
   return (
-    <form className="content__form js-form" action="">
-      <section className={`js-collapsable-container ${collapsableDesign}`}>
+    <form className="content__form" action="">
+      <section className={collapsableDesign}>
         <CollapsableHeader
           title="Diseña"
           icon="far fa-object-ungroup form__iconL"
@@ -66,7 +64,7 @@ function Form(props) {
         />
       </section>
 
-      <section className={`fill js-collapsable-container ${collapsableFill}`}>
+      <section className={`fill ${collapsableFill}`}>
         <CollapsableHeader
           title="Rellena"
           icon="far fa-keyboard form__iconL"
@@ -81,8 +79,7 @@ function Form(props) {
       </section>
       <div className="form__border"></div>
 
-      <section
-        className={`sharecards js-collapsable-container  ${collapsableShare}`}>
+      <section className={`sharecards ${collapsableShare}`}>
         <CollapsableHeader
           title="Comparte"
           icon="fas fa-share-alt form__iconL"

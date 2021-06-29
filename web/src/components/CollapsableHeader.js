@@ -4,10 +4,8 @@ function CollapsableHeader(props) {
   };
 
   return (
-    <div
-      className="form__title js-collapsable-header collapsable--close"
-      onClick={handleClick}>
-      <h2 className="form__text js-collapsable-header">
+    <div className="form__title collapsable--close" onClick={handleClick}>
+      <h2 className="form__text">
         <i className={props.icon}></i>
         {props.title}
       </h2>
